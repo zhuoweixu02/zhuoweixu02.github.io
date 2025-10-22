@@ -199,6 +199,8 @@ exclude:
   - _pages/teaching.md
   - _pages/dropdown.md
   - _pages/profiles.md
+  - _includes/projects_horizontal.liquid
+  - _includes/projects.liquid
 keep_files:
   - CNAME
   - .nojekyll
