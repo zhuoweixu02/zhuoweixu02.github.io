@@ -23,7 +23,10 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/cv/";
           },
-        },{
+        },{id: "news-presented-the-poster-at-the-icra-2025-workshop-handy-moves-dexterity-in-multi-fingered-hands",
+          title: 'Presented the poster at the ICRA 2025 workshop “Handy Moves: Dexterity in Multi-Fingered...',
+          description: "",
+          section: "News",},{
         id: 'social-email',
         title: 'email',
         section: 'Socials',
