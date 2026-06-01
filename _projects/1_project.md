@@ -1,14 +1,15 @@
 ---
 layout: page
-title: project 1
-description: with background image
-img: assets/img/12.jpg
-importance: 1
-category: work
+title: Whole-Body Control of a Dexterous Hand–Robot System
+description: Designed a kinematic-twin teleoperation system for whole-body control of a dexterous hand–arm robot. Direct joint mapping enables intuitive operation, while a real-time MuJoCo digital twin supports visualization and validation of teleoperation commands.
+img: assets/img/project_preview/whole_body_tele_demo.gif
+importance: 2
+category: research
+selected: true
 related_publications: true
 ---
 
-Every project has a beautiful feature showcase page.
+<!-- Every project has a beautiful feature showcase page.
 It's easy to include images in a flexible 3-column grid format.
 Make your photos 1/3, 2/3, or full width.
 
@@ -19,63 +20,101 @@ To give your project a background in the portfolio page, just add the img tag to
     title: project
     description: a project with a background image
     img: /assets/img/12.jpg
-    ---
+    --- -->
+
+To **extend the reachable workspace** and **enable intuitive whole-body teleoperation** of the DeltaHand–Franka system, I developed a kinematic-twin-based teleoperation framework. The robotic platform consists of a sensorized DeltaHand mounted on the end effector of a Franka robotic arm. The DeltaHand is a multi-fingered, non-anthropomorphic robotic hand equipped with tactile sensing.
+
+The teleoperation interface is built around a **TeleHand–GELLO** system that serves as a kinematic twin of the DeltaHand–Franka robot. During teleoperation, the operator can manipulate the TeleHand to simultaneously control both the arm and hand motions of the robot. Motion of the TeleHand determines the end-effector pose of the Franka arm, while the TeleHand finger joints directly command the corresponding joints of the DeltaHand. By leveraging a kinematic-twin design, the system enables direct **joint-to-joint mapping**, resulting in intuitive and low-latency control.
+
+To facilitate visualization and verification of the teleoperation signals, I also created **virtual counterparts** of both the TeleHand–GELLO interface and the DeltaHand–Franka system in **MuJoCo**. These simulated models receive the teleoperator joint outputs as commands, providing real-time visualization of the commanded robot configuration and serving as a digital twin of the physical teleoperation system.
+
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/1.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
+        <video class="img-fluid rounded z-depth-1 autoplay-video" loop muted playsinline>
+            <source src="{{ 'assets/img/proj1/presentation/twins/kinematic_twin.mp4' | relative_url }}" type="video/mp4">
+        </video>
     </div>
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/3.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
+        <video class="img-fluid rounded z-depth-1 autoplay-video" loop muted playsinline>
+            <source src="{{ 'assets/img/proj1/presentation/twins/real_robot.mp4' | relative_url }}" type="video/mp4">
+        </video>
     </div>
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/5.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
+        <video class="img-fluid rounded z-depth-1 autoplay-video" loop muted playsinline>
+            <source src="{{ 'assets/img/proj1/presentation/twins/virtual_twin.mp4' | relative_url }}" type="video/mp4">
+        </video>
     </div>
 </div>
 <div class="caption">
-    Caption photos easily. On the left, a road goes through a tunnel. Middle, leaves artistically fall in a hipster photoshoot. Right, in another hipster photoshoot, a lumberjack grasps a handful of pine needles.
+    Teleoperator, real robot, and kinematic twin visualization of the system
 </div>
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/5.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
+        <video class="img-fluid rounded z-depth-1 autoplay-video" loop muted playsinline>
+            <source src="{{ 'assets/img/proj1/presentation/tong.mp4' | relative_url }}" type="video/mp4">
+        </video>
     </div>
 </div>
 <div class="caption">
-    This image can also have a caption. It's like magic.
+    teleoperate the system to use the tong.
 </div>
-
-You can also put regular text between your rows of images, even citations {% cite einstein1950meaning %}.
-Say you wanted to write a bit about your project before you posted the rest of the images.
-You describe how you toiled, sweated, _bled_ for your project, and then... you reveal its glory in the next row of images.
-
-<div class="row justify-content-sm-center">
-    <div class="col-sm-8 mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/6.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm-4 mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/11.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        <video class="img-fluid rounded z-depth-1 autoplay-video" loop muted playsinline>
+            <source src="{{ 'assets/img/proj1/presentation/cap.mp4' | relative_url }}" type="video/mp4">
+        </video>
     </div>
 </div>
 <div class="caption">
-    You can also have artistically styled 2/3 + 1/3 images, like these.
+    teleoperate the system to open the cap of the tissue box.
+</div>
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        <video class="img-fluid rounded z-depth-1 autoplay-video" loop muted playsinline>
+            <source src="{{ 'assets/img/proj1/presentation/cup.mp4' | relative_url }}" type="video/mp4">
+        </video>
+    </div>
+</div>
+<div class="caption">
+    teleoperate the system to unstack the cup.
+</div>
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        <video class="img-fluid rounded z-depth-1 autoplay-video" loop muted playsinline>
+            <source src="{{ 'assets/img/proj1/presentation/glass-frame.mp4' | relative_url }}" type="video/mp4">
+        </video>
+    </div>
+</div>
+<div class="caption">
+    teleoperate the system to use the glass frame.
+</div>
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        <video class="img-fluid rounded z-depth-1 autoplay-video" loop muted playsinline>
+            <source src="{{ 'assets/img/proj1/presentation/screw-driver.mp4' | relative_url }}" type="video/mp4">
+        </video>
+    </div>
+</div>
+<div class="caption">
+    teleoperate the system to use the screw-driver.
 </div>
 
-The code is simple.
-Just wrap your images with `<div class="col-sm">` and place them inside `<div class="row">` (read more about the <a href="https://getbootstrap.com/docs/4.4/layout/grid/">Bootstrap Grid</a> system).
-To make images responsive, add `img-fluid` class to each; for rounded corners and shadows use `rounded` and `z-depth-1` classes.
-Here's the code for the last row of images above:
 
-{% raw %}
+<script>
+(function() {
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        entry.target.play();
+      } else {
+        entry.target.pause();
+      }
+    });
+  }, { threshold: 0.3 });
 
-```html
-<div class="row justify-content-sm-center">
-  <div class="col-sm-8 mt-3 mt-md-0">
-    {% include figure.liquid path="assets/img/6.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-  </div>
-  <div class="col-sm-4 mt-3 mt-md-0">
-    {% include figure.liquid path="assets/img/11.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-  </div>
-</div>
-```
-
-{% endraw %}
+  document.querySelectorAll('video.autoplay-video').forEach(function(video) {
+    observer.observe(video);
+  });
+})();
+</script>

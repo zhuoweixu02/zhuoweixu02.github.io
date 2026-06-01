@@ -150,8 +150,8 @@ collections:
     defaults:
       layout: post
     output: true
-  # projects:
-  #   output: true
+  projects:
+    output: true
 
 # -----------------------------------------------------------------------------
 # Jekyll settings
@@ -199,8 +199,8 @@ exclude:
   - _pages/teaching.md
   - _pages/dropdown.md
   - _pages/profiles.md
-  - _projects
-  - _pages/projects.md
+  # - _projects
+  # - _pages/projects.md
 keep_files:
   - CNAME
   - .nojekyll
