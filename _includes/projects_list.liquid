@@ -16,7 +16,10 @@
 
   <div id="{{ project.title | slugify }}" class="col-sm-8">
     <div class="title">
-      <a href="{% if project.redirect %}{{ project.redirect }}{% else %}{{ project.url | relative_url }}{% endif %}" style="color: var(--global-text-color); text-decoration: none;">
+      <a
+        href="{% if project.redirect %}{{ project.redirect }}{% else %}{{ project.url | relative_url }}{% endif %}"
+        style="color: var(--global-text-color); text-decoration: none;"
+      >
         {{ project.title }}
       </a>
     </div>

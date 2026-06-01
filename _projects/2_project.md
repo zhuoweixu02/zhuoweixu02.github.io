@@ -28,7 +28,6 @@ The teleoperation interface is built around a **TeleHand–GELLO** system that s
 
 To facilitate visualization and verification of the teleoperation signals, I also created **virtual counterparts** of both the TeleHand–GELLO interface and the DeltaHand–Franka system in **MuJoCo**. These simulated models receive the teleoperator joint outputs as commands, providing real-time visualization of the commanded robot configuration and serving as a digital twin of the physical teleoperation system.
 
-
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
         <video class="img-fluid rounded z-depth-1 autoplay-video" loop muted playsinline>
@@ -99,7 +98,6 @@ To facilitate visualization and verification of the teleoperation signals, I als
 <div class="caption">
     teleoperate the system to use the screw-driver.
 </div>
-
 
 <script>
 (function() {

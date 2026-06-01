@@ -55,6 +55,7 @@ list: true
   <!-- Generate cards for each project -->
 
 {% if page.list %}
+
   <div class="publications">
     <ol class="bibliography">
     {% for project in sorted_projects %}
