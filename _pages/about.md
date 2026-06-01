@@ -2,7 +2,7 @@
 layout: about
 title: about
 permalink: /
-subtitle: Meche Master at CMU
+subtitle: Meche Master @CMU | Tactile Sensing | Manipulation
 
 profile:
   align: right
