@@ -40,7 +40,7 @@ ninja.data = [{
               window.location.href = "/projects/1_project.html";
             },},{id: "projects-tactile-augmented-imitation-learning-policy-for-dexterous-manipulation",
           title: 'Tactile Augmented Imitation Learning Policy for Dexterous Manipulation',
-          description: "coming soon",
+          description: "Developed and evaluated tactile-augmented imitation learning policies for fragile and contact-rich manipulation. Across tofu pinching, chip pinching, and box opening, the results show that force feedback is most valuable when visual observations cannot precisely resolve contact state, improving chip pinching success from 1/10 to 6/10.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/2_project.html";
             },},{id: "projects-project-3-with-very-long-name",
