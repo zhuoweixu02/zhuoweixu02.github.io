@@ -1,10 +1,10 @@
 ---
 layout: page
 title: Tactile Augmented Imitation Learning Policy for Dexterous Manipulation
-description: coming soon
+description: Developed and evaluated tactile-augmented imitation learning policies for fragile and contact-rich manipulation. Across tofu pinching, chip pinching, and box opening, the results show that force feedback is most valuable when visual observations cannot precisely resolve contact state, improving chip pinching success from 1/10 to 6/10.
 img: assets/img/project_preview/tofugif.gif
 importance: 1
-category: tmp
+category: research
 selected: true
 related_publications: true
 ---
