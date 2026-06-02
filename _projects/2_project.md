@@ -57,14 +57,10 @@ The policies were trained using 40 demonstrations.
 | Force + In-hand image + joint position | 8 / 10 | 
 | Audio + force + in-hand image + joint position | 8 / 10 |
 
-<div class="mt-3"></div>
-
-The results suggest that tactile sensing does not provide a measurable benefit in this task when object deformation is already visually observable. The in-hand image and joint-position baseline achieves 10 / 10 success, while adding force to the same visual-proprioceptive input decreases the success rate to 8 / 10. This indicates that, for tofu pinching, the visual stream already contains strong cues about the grasp state through the visible deformation of the object. Since ResNet-style image encoders are effective at extracting such deformation features, explicit force sensing does not appear to provide additional information that improves policy execution under the current data scale.
-
 <div class="row justify-content-center">
     <div class="col-sm-4 mt-3 mt-md-0">
         <video class="img-fluid rounded z-depth-1 autoplay-video" loop muted playsinline>
-            <source src="{{ 'assets/img/proj2/tofu_force_joint_eval.mp4' | relative_url }}" type="video/mp4">
+            <source src="{{ 'assets/img/proj2/tofu.mp4' | relative_url }}" type="video/mp4">
         </video>
     </div>
 </div>
@@ -104,12 +100,12 @@ This task highlights a setting where tactile sensing is particularly valuable: f
 <div class="row justify-content-center">
     <div class="col-sm-4 mt-3 mt-md-0">
         <video class="img-fluid rounded z-depth-1 autoplay-video" loop muted playsinline>
-            <source src="{{ 'assets/img/proj2/chipipnch/Media1.mp4' | relative_url }}" type="video/mp4">
+            <source src="{{ 'assets/img/proj2/chippinch/Media1.mp4' | relative_url }}" type="video/mp4">
         </video>
     </div>
     <div class="col-sm-4 mt-3 mt-md-0">
         <video class="img-fluid rounded z-depth-1 autoplay-video" loop muted playsinline>
-            <source src="{{ 'assets/img/proj2/chipipnch/Media2.mp4' | relative_url }}" type="video/mp4">
+            <source src="{{ 'assets/img/proj2/chippinch/Media2.mp4' | relative_url }}" type="video/mp4">
         </video>
     </div>
 </div>
@@ -157,12 +153,12 @@ In contrast, the audio-augmented policy also achieves 10 / 10 final success but 
 <div class="row justify-content-center">
     <div class="col-sm-4 mt-3 mt-md-0">
         <video class="img-fluid rounded z-depth-1 autoplay-video" loop muted playsinline>
-            <source src="{{ 'assets/img/proj2/boxopen/visionbluesuccess.mp4' | relative_url }}" type="video/mp4">
+            <source src="{{ 'assets/img/proj2/boxopening/visionbluesuccess.mp4' | relative_url }}" type="video/mp4">
         </video>
     </div>
     <div class="col-sm-4 mt-3 mt-md-0">
         <video class="img-fluid rounded z-depth-1 autoplay-video" loop muted playsinline>
-            <source src="{{ 'assets/img/proj2/boxopen/visionforcebluesuccess.mp4' | relative_url }}" type="video/mp4">
+            <source src="{{ 'assets/img/proj2/boxopening/visionforcebluesuccess.mp4' | relative_url }}" type="video/mp4">
         </video>
     </div>
 </div>
