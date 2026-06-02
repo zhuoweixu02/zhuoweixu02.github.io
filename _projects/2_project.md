@@ -45,7 +45,7 @@ For the tofu and chip pinching tasks, we use a diffusion policy conditioned on m
 
 ### Tofu Pinching
 
-The tofu pinching task evaluates whether tactile feedback improves manipulation of a deformable fragile object. Each policy was evaluated for 10 trials. A trial was considered successful if the policy successfully pinched and lifted the tofu within 3 minutes while keeping the object intact. In practice, no trial failed because the tofu was crushed; all failures were timeout failures where the policy did not complete the pinch within the time limit.
+The tofu pinching task evaluates whether tactile feedback improves manipulation of a deformable fragile object during a **regrasping** behavior. In this task, the policy first pinches and lifts the tofu using one opposing finger pair, then transfers the grasp to another opposing finger pair while keeping the tofu suspended. This requires the policy to maintain a stable but gentle grasp during the transition, since insufficient force may cause the tofu to slip, while excessive force could damage the object. Each policy was evaluated for 10 trials. A trial was considered successful if the policy completed the finger-pair transfer and maintained the grasp within 3 minutes while keeping the tofu intact.
 
 The policies were trained using 40 demonstrations.
 
@@ -68,13 +68,13 @@ The policies were trained using 40 demonstrations.
     Evaluation of the tofu pinching task using force and joint-position observations.
 </div>
 
-The results suggest that tactile sensing does not provide a clear improvement in this task when object deformation is already visually observable. The in-hand image and joint-position baseline achieves 10 / 10 success, while the tactile-augmented variants achieve comparable but not better performance. This suggests that, for tofu pinching, the visual stream already contains strong cues about the grasp state through the visible deformation of the object. Since ResNet-style image encoders are effective at extracting such deformation features, explicit force sensing does not appear to provide additional task-relevant information beyond the image-and-joint baseline under the current setup.
+The results suggest that tactile sensing does not provide a clear improvement in this task when **object deformation is already visually observable**. The in-hand image and joint-position baseline achieves 10 / 10 success, while the tactile-augmented variants achieve comparable but not better performance. This suggests that, for tofu pinching, the visual stream already contains strong cues about the grasp state through the visible deformation of the object. Since ResNet-style image encoders are effective at extracting such deformation features, explicit force sensing does not appear to provide additional task-relevant information beyond the image-and-joint baseline under the current setup.
 
-The force-and-joint policy still achieves a relatively high success rate of 8 / 10 without image observations. This result is important because it suggests that tactile feedback, together with proprioception, can support a compact and informative estimate of the grasp state. In other words, tactile sensing may not improve over vision when the relevant contact information is already visually available, but it can still provide a useful low-dimensional representation for contact-aware manipulation.
+The force-and-joint policy still achieves a relatively high success rate of 8 / 10 without image observations. This result is important because it suggests that **tactile feedback**, together with **proprioception**, can support a **compact and informative estimate** of the grasp state. In other words, tactile sensing may not improve over vision when the relevant contact information is already visually available, but it can still provide a useful **low-dimensional representation** for contact-aware manipulation.
 
 Audio is less effective in this task. The audio-and-joint policy achieves only 5 / 10 success, suggesting that the audio signal is either too sparse, too noisy, or weakly correlated with the slow deformation process involved in tofu pinching. The full multi-modal policy with audio, force, in-hand image, and joint position achieves 8 / 10 success, which again does not improve over the image-and-joint baseline. This suggests that simply adding more sensory modalities does not necessarily improve imitation learning performance, especially when some modalities provide weak or noisy task-relevant information under a limited demonstration budget.
 
-It is also worth noting that no evaluation trial failed by crushing the tofu. All failures were timeout failures where the policy did not complete the pinch within the 3-minute limit. Therefore, the main challenge in this task is not excessive force regulation, but whether the policy can reliably infer when and how to complete the pinch. For tofu, this inference appears to be sufficiently captured by visual deformation and joint-state observations.
+It is also worth noting that **no evaluation trial failed by crushing the tofu**. All failures were timeout failures where the policy did not complete the pinch within the 3-minute limit. Therefore, the main challenge in this task is not excessive force regulation, but whether the policy can reliably infer when and how to complete the pinch. For tofu, this inference appears to be sufficiently captured by visual deformation and joint-state observations.
 
 ---
 
@@ -110,7 +110,7 @@ This task highlights a setting where tactile sensing is particularly valuable: f
     </div>
 </div>
 <div class="caption">
-    Evaluation of the chip pinching task using the image-and-joint baseline and the force-augmented policy.
+    Evaluation of the chip pinching task using the image-and-joint baseline (right) and the force-augmented policy (left).
 </div>
 
 ---
@@ -132,7 +132,7 @@ For the box-opening task, we use an ACT policy. The in-hand image is encoded by 
 
 ### Box Opening
 
-The box-opening task evaluates tactile sensing in a contact-rich manipulation scenario. We collected 25 demonstrations. During data collection, the hand was kept approximately parallel to the table, while the vertical height of the hand was randomized within a total range of approximately 1.5 cm. This height randomization was intentionally introduced to make monocular depth estimation more challenging. The initial pose of the box was also randomized: the box position was sampled within an approximately 10 cm radius under the hand's frontal projection, and the box orientation was randomized within ±45°.
+The box-opening task evaluates tactile sensing in a contact-rich manipulation scenario. We collected 25 demonstrations. During data collection, the hand was kept parallel to the table, while the vertical height of the hand was randomized within a total range of approximately 1.5 cm. This height randomization was intentionally introduced to make monocular depth estimation more challenging. The initial pose of the box was also randomized: the box position was sampled within an approximately 10 cm radius under the hand's frontal projection, and the box orientation was randomized within ±45°.
 
 This setup was designed to test whether tactile sensing can help the policy estimate contact more directly, instead of relying on repeated visual recovery or stochastic retry behaviors.
 
@@ -151,19 +151,25 @@ The image-and-joint baseline and the force-augmented policy show similar executi
 In contrast, the audio-augmented policy also achieves 10 / 10 final success but increases the average execution time by approximately 50%. One possible explanation is that the vibrotactile/audio signal is noisy and highly dependent on local contact conditions. With only 25 demonstrations, the policy may not learn an audio representation that sufficiently covers the possible contact events during box opening. A more systematic data-scaling ablation would be needed to determine whether audio becomes beneficial with more demonstrations.
 
 <div class="row justify-content-center">
-    <div class="col-sm-4 mt-3 mt-md-0">
+    <div class="col-sm-8 mt-3 mt-md-0">
         <video class="img-fluid rounded z-depth-1 autoplay-video" loop muted playsinline>
             <source src="{{ 'assets/img/proj2/boxopening/visionbluesuccess.mp4' | relative_url }}" type="video/mp4">
         </video>
     </div>
-    <div class="col-sm-4 mt-3 mt-md-0">
+</div>
+<div class="caption">
+    Evaluation of the box-opening task using the image-and-joint baseline.
+</div>
+<div class="row justify-content-center">
+    <div class="col-sm-8 mt-3 mt-md-0">
         <video class="img-fluid rounded z-depth-1 autoplay-video" loop muted playsinline>
             <source src="{{ 'assets/img/proj2/boxopening/visionforcebluesuccess.mp4' | relative_url }}" type="video/mp4">
         </video>
     </div>
 </div>
+
 <div class="caption">
-    Evaluation of the box-opening task using the image-and-joint baseline and the force-augmented policy.
+    Evaluation of the box-opening task using the force-augmented policy.
 </div>
 
 ---
