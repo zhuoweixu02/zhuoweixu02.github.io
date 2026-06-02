@@ -28,6 +28,6 @@ announcements:
 #   limit: 3 # leave blank to include all the blog posts
 ---
 
-Hello! I am Zhuowei Xu, a second-year master student at School of Mechanical Engineering, Carnegie Mellon University, advised by Prof. [Zeynep Temel](https://www.ri.cmu.edu/ri-faculty/zeynep-temel/) and Prof. [Oliver Kroemer](https://www.ri.cmu.edu/ri-faculty/oliver-kroemer/). My research focuses on developing **multi-modal tactile sensors** and using them to give robots a **structured understanding of contact**, thereby enhancing **dexterous manipulation**.
+Hello! I am Zhuowei Xu, a recent M.S. graduate in Mechanical Engineering from Carnegie Mellon University, advised by Prof. [Zeynep Temel](https://www.ri.cmu.edu/ri-faculty/zeynep-temel/) and Prof. [Oliver Kroemer](https://www.ri.cmu.edu/ri-faculty/oliver-kroemer/). My research focuses on **multimodal tactile sensing**, **dexterous manipulation**, and **robot learning**. I am particularly interested in how tactile and multimodal feedback can help robots understand contact-rich interactions and perform complex manipulation tasks.
 
 I received my B.S. in School of Mechanical Engineering at Shanghai Jiao Tong University in 2024, where I was fortunate to work with Prof. [Genliang Chen](https://scholar.google.com/citations?user=ggFP0yIAAAAJ&hl=zh-CN) on **pneumatic grippers**. This experience sparked my interest in manipulation and taught me to approach robotic-hand design from a bio-inspired viewpoint, using integrated mechanical design and control co-optimization to achieve better manipulation performance.
