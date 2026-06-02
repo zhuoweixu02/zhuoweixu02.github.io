@@ -36,7 +36,7 @@ For the tofu and chip pinching tasks, we use a diffusion policy conditioned on m
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/proj2/TODO_diffusion_policy_architecture.png" title="Diffusion policy architecture" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid loading="eager" path="assets/img/proj2/diffusion_policy_architecture.png" title="Diffusion policy architecture" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
 <div class="caption">
