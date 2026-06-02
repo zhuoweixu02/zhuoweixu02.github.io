@@ -93,9 +93,9 @@ The policies were trained using 50 demonstrations.
 
 Compared with tofu pinching, the chip pinching task shows a clearer benefit from force feedback. The image-and-joint baseline succeeds in only 1 / 10 trials. In many failure cases, the policy repeatedly attempts to pinch the chip but does not reliably transition to lifting. This suggests that visual observations alone are insufficient to determine whether the chip has been securely grasped.
 
-Adding force feedback improves the success rate to 6 / 10. In successful force-augmented trials, once the fingers establish contact with the chip, the policy exhibits less horizontal-plane jittering and proceeds to lift the object more stably. This behavior suggests that force feedback provides a more precise estimate of the grasp state than vision alone.
+Adding **force feedback improves the success rate** to 6 / 10. In successful force-augmented trials, once the fingers establish contact with the chip, the policy exhibits less horizontal-plane jittering and proceeds to lift the object more stably. This behavior suggests that **force feedback** provides a more **precise estimate** of the grasp state than vision alone.
 
-This task highlights a setting where tactile sensing is particularly valuable: fragile-object manipulation with a narrow feasible force range. For brittle objects such as chips, vision may indicate whether contact has occurred, but it is less reliable for estimating whether the applied force is sufficient for lifting while still remaining below the breaking threshold. Force sensing directly reduces this ambiguity.
+This task highlights a setting where tactile sensing is particularly valuable: **fragile-object manipulation with a narrow feasible force range**. For brittle objects such as chips, vision may indicate whether contact has occurred, but it is less reliable for estimating whether the applied force is sufficient for lifting while still remaining below the breaking threshold. Force sensing directly reduces this ambiguity.
 
 <div class="row justify-content-center">
     <div class="col-sm-4 mt-3 mt-md-0">
@@ -144,7 +144,7 @@ This setup was designed to test whether tactile sensing can help the policy esti
 
 <div class="mt-3"></div>
 
-All three policies achieve 10 / 10 success. Therefore, final success rate alone does not reveal a measurable advantage from adding tactile sensing. To further analyze the behavior, we also examine whether tactile sensing reduces temporary failures, recovery motions, or repeated contact attempts.
+**All three policies achieve 10 / 10 success**. Therefore, final success rate alone does not reveal a measurable advantage from adding tactile sensing. To further analyze the behavior, we also examine whether tactile sensing reduces temporary failures, recovery motions, or repeated contact attempts.
 
 The image-and-joint baseline and the force-augmented policy show similar execution behavior. Both policies complete the task reliably and achieve first-attempt success in the evaluation trials. This suggests that, under the current data distribution, visual and proprioceptive observations are already sufficient for solving the box-opening task, and force feedback does not provide a clear additional benefit.
 
