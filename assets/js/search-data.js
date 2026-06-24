@@ -43,9 +43,9 @@ ninja.data = [{
           description: "Developed and evaluated tactile-augmented imitation learning policies for fragile and contact-rich manipulation. Across tofu pinching, chip pinching, and box opening, the results show that force feedback is most valuable when visual observations cannot precisely resolve contact state, improving chip pinching success from 1/10 to 6/10.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/2_project.html";
-            },},{id: "projects-project-3-with-very-long-name",
-          title: 'project 3 with very long name',
-          description: "a project that redirects to another website",
+            },},{id: "projects-model-based-trajectory-control-and-planning-for-a-magnetic-whiteboard-cleaning-robot",
+          title: 'Model Based Trajectory Control and Planning for a Magnetic Whiteboard Cleaning Robot',
+          description: "This project used an existing magnetic whiteboard-cleaning robot as a testbed for model-based motion control on vertical surfaces. I implemented and evaluated TVLQR and MPC trajectory tracking algorithms against a PID baseline, with MPC providing the most stable and robust erasing performance in hardware experiments.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/3_project.html";
             },},{id: "projects-project-4",
