@@ -1,7 +1,16 @@
 <div class="row publication-row">
+  {% if project.redirect %}
+    {% assign project_target_url = project.redirect %}
+  {% elsif project.website %}
+    {% assign project_target_url = project.website %}
+  {% elsif project.pdf %}
+    {% assign project_target_url = project.pdf %}
+  {% else %}
+    {% assign project_target_url = project.url | relative_url %}
+  {% endif %}
   <div class="col col-sm-2 abbr">
     {% if project.img %}
-      <a href="{% if project.redirect %}{{ project.redirect }}{% else %}{{ project.url | relative_url }}{% endif %}">
+      <a href="{{ project_target_url }}">
         {%
           include figure.liquid
           loading="eager"
@@ -17,7 +26,7 @@
   <div id="{{ project.title | slugify }}" class="col-sm-8">
     <div class="title">
       <a
-        href="{% if project.redirect %}{{ project.redirect }}{% else %}{{ project.url | relative_url }}{% endif %}"
+        href="{{ project_target_url }}"
         style="color: var(--global-text-color); text-decoration: none;"
       >
         {{ project.title }}
