@@ -33,6 +33,9 @@ ninja.data = [{
         },{id: "news-presented-the-poster-at-the-icra-2025-workshop-handy-moves-dexterity-in-multi-fingered-hands",
           title: 'Presented the poster at the ICRA 2025 workshop “Handy Moves: Dexterity in Multi-Fingered...',
           description: "",
+          section: "News",},{id: "news-our-paper-on-multi-modal-robotic-fingertip-was-accepted-to-iros-2026",
+          title: 'Our paper on multi-modal robotic fingertip was accepted to IROS 2026 !',
+          description: "",
           section: "News",},{id: "projects-whole-body-control-of-a-dexterous-hand-robot-system",
           title: 'Whole-Body Control of a Dexterous Hand–Robot System',
           description: "Designed a kinematic-twin teleoperation system for whole-body control of a dexterous hand–arm robot. Direct joint mapping enables intuitive operation, while a real-time MuJoCo digital twin supports visualization and validation of teleoperation commands.",
@@ -43,14 +46,14 @@ ninja.data = [{
           description: "Developed and evaluated tactile-augmented imitation learning policies for fragile and contact-rich manipulation. Across tofu pinching, chip pinching, and box opening, the results show that force feedback is most valuable when visual observations cannot precisely resolve contact state, improving chip pinching success from 1/10 to 6/10.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/2_project.html";
-            },},{id: "projects-model-based-trajectory-control-and-planning-for-a-magnetic-whiteboard-cleaning-robot",
-          title: 'Model Based Trajectory Control and Planning for a Magnetic Whiteboard Cleaning Robot',
+            },},{id: "projects-model-based-trajectory-control-and-planning-for-a-magnetic-whiteboard-robot",
+          title: 'Model Based Trajectory Control and Planning for a Magnetic Whiteboard Robot',
           description: "This project used an existing magnetic whiteboard-cleaning robot as a testbed for model-based motion control on vertical surfaces. I implemented and evaluated TVLQR and MPC trajectory tracking algorithms against a PID baseline, with MPC providing the most stable and robust erasing performance in hardware experiments.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/3_project.html";
-            },},{id: "projects-project-4",
-          title: 'project 4',
-          description: "another without an image",
+            },},{id: "projects-galvo-mirrir-robot-calibration-for-3d-workspace-extension",
+          title: 'Galvo mirrir–Robot Calibration for 3D Workspace Extension',
+          description: "Worked on a galvo mirror–robot co-working platform that combines fast planar galvo scanning with 6-DoF robotic motion to extend the effective workspace into 3D. Developed a kinematic calibration and error-compensation model to estimate system parameters from planar images and improve spatial positioning accuracy.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/4_project.html";
             },},{id: "projects-project-5",
