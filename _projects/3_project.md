@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Model Based Trajectory Control and Planning for a Magnetic Whiteboard Cleaning Robot
+title: Model Based Trajectory Control and Planning for a Magnetic Whiteboard Robot
 description: This project used an existing magnetic whiteboard-cleaning robot as a testbed for model-based motion control on vertical surfaces. I implemented and evaluated TVLQR and MPC trajectory tracking algorithms against a PID baseline, with MPC providing the most stable and robust erasing performance in hardware experiments.
 img: assets/img/project_preview/OCRL.png
 pdf: /assets/pdf/OCRL_WIPER_Report.pdf
