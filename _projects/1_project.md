@@ -22,7 +22,7 @@ To give your project a background in the portfolio page, just add the img tag to
     img: /assets/img/12.jpg
     --- -->
 
-To **extend the reachable workspace** and **enable intuitive whole-body teleoperation** of the DeltaHand–Franka system, I developed a kinematic-twin-based teleoperation framework. The robotic platform consists of a sensorized DeltaHand mounted on the end effector of a Franka robotic arm. The DeltaHand is a multi-fingered, non-anthropomorphic robotic hand equipped with tactile sensing.
+To **extend the reachable workspace** and **enable intuitive whole-body teleoperation** of the DeltaHand–Franka system, We developed a kinematic-twin-based teleoperation framework. The robotic platform consists of a sensorized DeltaHand mounted on the end effector of a Franka robotic arm. The DeltaHand is a multi-fingered, non-anthropomorphic robotic hand equipped with tactile sensing.
 
 The teleoperation interface is built around a **TeleHand–GELLO** system that serves as a kinematic twin of the DeltaHand–Franka robot. During teleoperation, the operator can manipulate the TeleHand to simultaneously control both the arm and hand motions of the robot. Motion of the TeleHand determines the end-effector pose of the Franka arm, while the TeleHand finger joints directly command the corresponding joints of the DeltaHand. By leveraging a kinematic-twin design, the system enables direct **joint-to-joint mapping**, resulting in intuitive and low-latency control.
 
