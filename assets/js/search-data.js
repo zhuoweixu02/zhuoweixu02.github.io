@@ -56,9 +56,9 @@ ninja.data = [{
           description: "Worked on a galvo mirror–robot co-working platform that combines fast planar galvo scanning with 6-DoF robotic motion to extend the effective workspace into 3D. Developed a kinematic calibration and error-compensation model to estimate system parameters from planar images and improve spatial positioning accuracy.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/4_project.html";
-            },},{id: "projects-designed-a-tactile-event-extraction-framework-for-object-centric-manipulation-where-long-horizon-exploration-is-compressed-into-informative-tactile-tokens-through-a-top-k-selector-the-extracted-object-context-enables-policies-to-reason-about-localized-physical-properties-and-adapt-manipulation-actions-accordingly",
-          title: 'Designed a tactile event extraction framework for object-centric manipulation, where long-horizon exploration is...',
-          description: "",
+            },},{id: "projects-learning-tactile-event-extraction-for-object-centric-manipulation",
+          title: 'Learning Tactile Event Extraction for Object-Centric Manipulation',
+          description: "Designed a tactile event extraction framework for object-centric manipulation, where long-horizon exploration is compressed into informative tactile tokens through a Top-K selector. The extracted object context enables policies to reason about localized physical properties and adapt manipulation actions accordingly.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/5_project.html";
             },},{id: "projects-project-6",
