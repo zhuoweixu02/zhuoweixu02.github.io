@@ -1,6 +1,7 @@
 ---
 layout: page
-title: Designed a tactile event extraction framework for object-centric manipulation, where long-horizon exploration is compressed into informative tactile tokens through a Top-K selector. The extracted object context enables policies to reason about localized physical properties and adapt manipulation actions accordingly.
+title: Learning Tactile Event Extraction for Object-Centric Manipulation
+description: Designed a tactile event extraction framework for object-centric manipulation, where long-horizon exploration is compressed into informative tactile tokens through a Top-K selector. The extracted object context enables policies to reason about localized physical properties and adapt manipulation actions accordingly.
 img: assets/img/project_preview/topk.gif
 importance: 3
 category: research
@@ -72,14 +73,14 @@ Beyond end-to-end policy learning, this project also explores a representation-l
 
 ### Exploration with Reusable Unit Skills
 <div class="row justify-content-center">
-    <div class="col-sm-8 mt-3 mt-md-0">
-        <video class="img-fluid rounded z-depth-1 autoplay-video" loop muted playsinline>
+    <div class="col-12 mt-3 mt-md-0">
+        <video class="img-fluid w-100 rounded z-depth-1 autoplay-video" loop muted playsinline>
             <source src="{{ 'assets/img/proj5/unitskills/5skills.mp4' | relative_url }}" type="video/mp4">
         </video>
     </div>
 </div>
 <div class="caption">
-    Reusable exploratory skills designed to expose complementary physical properties of objects
+    Reusable exploratory skills designed to expose complementary physical properties of objects.
 </div>
 
 To provide structured tactile evidence, the robot explores objects through a set of reusable unit skills, including squeezing, sliding, lifting, horizontal shifting, and tilting. Each skill is associated with different types of physical information: squeezing provides cues about rigidity, sliding reveals surface smoothness and material properties, and lifting or shifting can expose weight and internal-content-related features. Combining these interaction primitives allows the system to build richer object representations from diverse forms of physical contact.
