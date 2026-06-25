@@ -1,13 +1,14 @@
 ---
 layout: page
-title: project 5
-description: a project with a background image
-img: assets/img/1.jpg
+title: Designed a tactile event extraction framework for object-centric manipulation, where long-horizon exploration is compressed into informative tactile tokens through a Top-K selector. The extracted object context enables policies to reason about localized physical properties and adapt manipulation actions accordingly.
+img: assets/img/project_preview/topk.gif
 importance: 3
-category: none
+category: research
+selected: true
+related_publications: true
 ---
 
-Every project has a beautiful feature showcase page.
+<!-- Every project has a beautiful feature showcase page.
 It's easy to include images in a flexible 3-column grid format.
 Make your photos 1/3, 2/3, or full width.
 
@@ -18,63 +19,115 @@ To give your project a background in the portfolio page, just add the img tag to
     title: project
     description: a project with a background image
     img: /assets/img/12.jpg
-    ---
+    --- -->
+
+This project investigates how active tactile exploration can be used to infer latent object properties for downstream object-centric manipulation. During exploration, the robot collects tactile, force, and proprioceptive observations through physical interaction with the object. Instead of using the full long-horizon history directly, the system extracts a compact set of informative tactile events as an object-level context, which is then used to condition subsequent policy decisions in partially observable settings.
+
+---
+
+### End-to-End Policy with Top-K Tactile Event Selection
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/1.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/3.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/5.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
+        {% include figure.liquid loading="eager" path="assets/img/proj5/topk-structure.png" title="Diffusion policy architecture" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
 <div class="caption">
-    Caption photos easily. On the left, a road goes through a tunnel. Middle, leaves artistically fall in a hipster photoshoot. Right, in another hipster photoshoot, a lumberjack grasps a handful of pine needles.
-</div>
-<div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/5.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    This image can also have a caption. It's like magic.
+    End-to-end tactile event extraction with a Top-K selector over long-horizon vibrotactile observations
 </div>
 
-You can also put regular text between your rows of images.
-Say you wanted to write a little bit about your project before you posted the rest of the images.
-You describe how you toiled, sweated, _bled_ for your project, and then... you reveal its glory in the next row of images.
+This section studies whether long-horizon tactile exploration can be compressed through sparse event selection while preserving the information needed for downstream decision making. Inspired by token-pruning mechanisms in DynamicViT, the Top-K selector assigns importance scores to vibrotactile embeddings and retains only a small set of informative key frames from the exploration history. In the sponge side-selection task, the Top-K selector achieved performance comparable to a Transformer-based history compressor, suggesting that tactile-conditioned policies do not always require dense sequence modeling when the relevant physical evidence is concentrated in a small number of interaction events.
 
-<div class="row justify-content-sm-center">
+---
+
+# Localized Feature Inference for Object-Centric Decision Making
+<div class="row justify-content-center">
     <div class="col-sm-8 mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/6.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm-4 mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/11.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
+        <video class="img-fluid rounded z-depth-1 autoplay-video" loop muted playsinline>
+            <source src="{{ 'assets/img/proj5/spongeslide.mp4' | relative_url }}" type="video/mp4">
+        </video>
     </div>
 </div>
 <div class="caption">
-    You can also have artistically styled 2/3 + 1/3 images, like these.
+    Sliding-based tactile exploration for identifying localized surface properties of a sponge
+</div>
+We evaluate the tactile event extraction framework on a localized feature inference task. The robot slides along both sides of a sponge to collect tactile and proprioceptive observations, infers which side is rough or smooth from the exploration history, and then flips the sponge to use the smooth side for wiping. This task requires the policy to associate tactile observations with spatially localized object features and recall this information during a later manipulation decision, making it a compact testbed for POMDP-style tactile reasoning.
+
+---
+
+### Pretrained Object Representation Learning through Token Selection
+
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="assets/img/proj5/exp2context.png" title="end2end architecture" class="img-fluid rounded z-depth-1" %}
+    </div>
+</div>
+<div class="caption">
+    Pretraining tactile object representations from long-horizon exploratory interactions
 </div>
 
-The code is simple.
-Just wrap your images with `<div class="col-sm">` and place them inside `<div class="row">` (read more about the <a href="https://getbootstrap.com/docs/4.4/layout/grid/">Bootstrap Grid</a> system).
-To make images responsive, add `img-fluid` class to each; for rounded corners and shadows use `rounded` and `z-depth-1` classes.
-Here's the code for the last row of images above:
+Beyond end-to-end policy learning, this project also explores a representation-learning formulation in which tactile exploration is used to pretrain task-agnostic object embeddings. The model observes long-horizon trajectories containing vibrotactile readings, robot motion, and end-effector force, and uses a Top-K token learner to select informative moments from the interaction history. The selected tokens are projected into a compact object representation that captures physical properties discovered through active exploration and can later be used as a conditioning signal for downstream policy learning.
 
-{% raw %}
+---
 
-```html
-<div class="row justify-content-sm-center">
-  <div class="col-sm-8 mt-3 mt-md-0">
-    {% include figure.liquid path="assets/img/6.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-  </div>
-  <div class="col-sm-4 mt-3 mt-md-0">
-    {% include figure.liquid path="assets/img/11.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-  </div>
+### Exploration with Reusable Unit Skills
+<div class="row justify-content-center">
+    <div class="col-sm-8 mt-3 mt-md-0">
+        <video class="img-fluid rounded z-depth-1 autoplay-video" loop muted playsinline>
+            <source src="{{ 'assets/img/proj5/unitskills/5skills.mp4' | relative_url }}" type="video/mp4">
+        </video>
+    </div>
 </div>
-```
+<div class="caption">
+    Reusable exploratory skills designed to expose complementary physical properties of objects
+</div>
 
-{% endraw %}
+To provide structured tactile evidence, the robot explores objects through a set of reusable unit skills, including squeezing, sliding, lifting, horizontal shifting, and tilting. Each skill is associated with different types of physical information: squeezing provides cues about rigidity, sliding reveals surface smoothness and material properties, and lifting or shifting can expose weight and internal-content-related features. Combining these interaction primitives allows the system to build richer object representations from diverse forms of physical contact.
+
+---
+
+### Interpreting the Learned Token Selection
+
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="assets/img/proj5/deltahand-object-representation-fixed.png" title="Diffusion policy architecture" class="img-fluid rounded z-depth-1" %}
+    </div>
+</div>
+<div class="caption">
+    Visualization of selected tactile tokens across exploratory skills and object properties
+</div>
+
+The learned token selector is evaluated through attribute prediction accuracy and qualitative token-selection patterns. For seen objects, the model achieves near-saturated performance on stiffness, smoothness, and material classification, while granularity remains the most difficult attribute. On unseen objects, smoothness generalizes well across all tested modalities, whereas weight and granularity exhibit larger drops in accuracy, indicating that these properties are more sensitive to object variation and may require stronger multimodal evidence. The comparison across modalities shows that incorporating force and joint information improves several unseen-object attributes, most notably weight prediction, suggesting that proprioceptive and force signals provide complementary information to vibrotactile observations. 
+
+The selected-token plots show that the Top-K learner concentrates tokens in specific exploratory phases rather than distributing them uniformly over time. In particular, tokens are frequently selected around squeezing and later shifting interactions, which are physically relevant for inferring rigidity, weight, and internal-content-related properties. These results suggest that the selector learns to identify informative tactile events associated with object-property inference.
+
+### Context-Aware Object-Centric Policy Learning
+
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        {% include figure.liquid loading="eager" path="assets/img/proj5/archetec1.png" title="Diffusion policy architecture" class="img-fluid rounded z-depth-1" %}
+    </div>
+</div>
+<div class="caption">
+    Object-centric policy learning conditioned on tactile object representations
+</div>
+
+The learned object representation is used as a time-invariant context for downstream policy learning. This context is combined with object position embeddings and time-varying observations such as proprioception, vision, and tactile feedback, and is then provided to an ACT-style policy for action prediction. By conditioning the policy on object features inferred from prior exploration, the framework enables manipulation behavior to adapt to latent physical properties that are not directly observable at decision time.
+
+<script>
+(function() {
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        entry.target.play();
+      } else {
+        entry.target.pause();
+      }
+    });
+  }, { threshold: 0.3 });
+
+  document.querySelectorAll('video.autoplay-video').forEach(function(video) {
+    observer.observe(video);
+  });
+})();
+</script>

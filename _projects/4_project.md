@@ -4,9 +4,9 @@ title: Galvo mirrir–Robot Calibration for 3D Workspace Extension
 description: Worked on a galvo mirror–robot co-working platform that combines fast planar galvo scanning with 6-DoF robotic motion to extend the effective workspace into 3D. Developed a kinematic calibration and error-compensation model to estimate system parameters from planar images and improve spatial positioning accuracy.
 img: assets/img/project_preview/galvo_mirror.png
 website: https://me.sjtu.edu.cn/bysj/jxgc_2024/1350.html
-importance: 4
+importance: 5
 category: research
-selected: false
+selected: true
 related_publications: true
 ---
 
