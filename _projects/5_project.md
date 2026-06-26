@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Learning Tactile Event Extraction for Object-Centric Manipulation
+title: History-Aware Tactile Decision-Making for Object-Centric Manipulation
 description: Designed a tactile event extraction framework for object-centric manipulation, where long-horizon exploration is compressed into informative tactile tokens through a Top-K selector. The extracted object context enables policies to reason about localized physical properties and adapt manipulation actions accordingly.
 img: assets/img/project_preview/topk.gif
 importance: 3
