@@ -43,6 +43,9 @@
       {% if project.pdf %}
         <a href="{{ project.pdf }}" class="btn btn-sm z-depth-0" role="button">PDF</a>
       {% endif %}
+      {% if project.report %}
+        <a href="{{ project.url | relative_url }}" class="btn btn-sm z-depth-0" role="button">REPORT</a>
+      {% endif %}
     </div>
   </div>
 </div>

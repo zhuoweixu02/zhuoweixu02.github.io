@@ -6,6 +6,7 @@ img: assets/img/project_preview/topk.gif
 importance: 3
 category: research
 selected: true
+report: true
 related_publications: true
 ---
 

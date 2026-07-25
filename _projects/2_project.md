@@ -6,6 +6,7 @@ img: assets/img/project_preview/tofugif.gif
 importance: 1
 category: research
 selected: true
+report: true
 related_publications: true
 ---
 

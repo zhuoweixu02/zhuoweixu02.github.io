@@ -6,6 +6,7 @@ img: assets/img/project_preview/whole_body_tele_demo.gif
 importance: 2
 category: research
 selected: true
+report: true
 related_publications: true
 ---
 
